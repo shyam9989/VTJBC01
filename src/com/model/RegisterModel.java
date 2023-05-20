@@ -6,6 +6,9 @@ public class RegisterModel {
 	String name;
 	String emailid;
 	String password;
+	String address;
+	String mobile;
+	int status;
 	
 	
 	public int getUserid() {
@@ -32,6 +35,25 @@ public class RegisterModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
 	
 	
 

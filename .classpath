@@ -24,5 +24,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/shyam/eclipse-workspace/VTJBC01_2022/WebContent/WEB-INF/lib/javax.mail-1.6.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

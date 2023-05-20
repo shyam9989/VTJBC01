@@ -2,6 +2,7 @@ package com.configurations;
 
 import com.dao.DAO;
 import com.model.KycModel;
+import com.service.AdminService;
 
 public class AppConfig {
 	
@@ -13,6 +14,8 @@ public class AppConfig {
 	   return new DAO();
 	}
 	
-	
+	public static AdminService getAdminService() {
+		return new AdminService();
+	}
 
 }

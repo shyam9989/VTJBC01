@@ -110,6 +110,7 @@
               <div class="row">
                 <div class="col-md-10 form-group">
                   <input type="email" name="emailid" class="form-control" placeholder="Your Emailid" required>
+                  <input type="hidden" name="fin" value="notfinance"/>
                 </div><br/><br/><br/>
                 
               </div>

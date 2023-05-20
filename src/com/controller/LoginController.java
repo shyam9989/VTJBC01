@@ -29,6 +29,44 @@ public class LoginController extends HttpServlet {
 		
 		String emailid=req.getParameter("emailid");
 		String password=req.getParameter("password");
+		String logintype=req.getParameter("fin");
+		
+		if(emailid.equalsIgnoreCase("admin@gmail.com") && password.equalsIgnoreCase("admin")) {
+		
+			
+			resp.sendRedirect("adminhome.jsp");
+		}else if(logintype.equalsIgnoreCase("finance")){
+			
+			
+			LoginService lc=new LoginService();
+			boolean userStatus=lc.financeLogin(emailid, password);
+			
+			if(userStatus) {
+				try {
+					
+					RegisterModel rm=lc.getFinanceDetails(emailid);
+					 HttpSession session = req.getSession();
+					 session.setAttribute("account", rm);
+					 req.setAttribute("account", rm);
+				     req.getRequestDispatcher("FinanceHome.jsp").forward(req, resp);
+				} catch (ClassNotFoundException | SQLException | MyExcetpion e) {
+					e.printStackTrace();
+				}	
+				
+			}else {
+				String alert = "<div class=\"alert alert-danger wrap-input100\">\n" +
+	                    "                        <p style=\"font-family: Ubuntu-Bold; font-size: 18px; margin: 0.25em 0; text-align: center\">\n" +
+	                    "                            email/passowrd wrong!\n" +
+	                    "                        </p>\n" +
+	                    "                    </div>";
+			req.setAttribute("alert", alert);
+	        req.getRequestDispatcher("login.jsp").forward(req, resp);
+			}
+			
+			
+		}
+		
+		else {
 		
 		LoginService lc=new LoginService();
 		boolean userStatus=lc.userLogin(emailid, password);
@@ -53,6 +91,7 @@ public class LoginController extends HttpServlet {
                     "                    </div>";
 		req.setAttribute("alert", alert);
         req.getRequestDispatcher("login.jsp").forward(req, resp);
+		}
 		}
 
 	}

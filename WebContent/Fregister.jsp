@@ -135,7 +135,7 @@
                 <input type="text" class="form-control" name="mobile" id="subject" placeholder="Your Mobile" required>
               </div>
                <div class="col-md-6 form-group mt-3">
-              <textarea rows="4" cols="4" class="form-control" placeholder="Your Address"></textarea>
+              <textarea rows="4" cols="4" class="form-control" name="address" placeholder="Your Address"></textarea>
               </div>
               </div>
              

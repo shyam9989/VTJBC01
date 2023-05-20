@@ -1,3 +1,4 @@
+<%@page import="com.model.RegisterModel"%>
 <%@page import="java.io.IOException"%>
 <%@page import="java.io.FileOutputStream"%>
 <%@page import="java.io.BufferedOutputStream"%>
@@ -7,7 +8,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.service.UploadKycService"%>
 <%@page import="com.model.KycModel"%>
-<%@page import="com.model.RegisterModel"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -105,7 +106,6 @@
     ${alert}
       <div class="container" data-aos="fade-up">
 <%
-
 RegisterModel rm=(RegisterModel)session.getAttribute("account");
 UploadKycService uks=new UploadKycService();
 List<KycModel> kycs = uks.getKyc(rm.getUserid());
@@ -114,9 +114,6 @@ for(KycModel kyc:kycs){
 	System.out.println(kyc.getFatherName());
 	
 }
-
-
-
 %>
 <p>Welcome :<%=rm.getName() %></p>
 <div class="mb-3">

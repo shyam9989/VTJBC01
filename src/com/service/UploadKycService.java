@@ -50,6 +50,7 @@ public class UploadKycService {
 				km.setFatherName(rs.getString("fname"));
 				km.setMotherName(rs.getString("mname"));
 				km.setMobile(rs.getString("mobile"));
+				km.setAddress(rs.getString("address"));
 				km.setBase64Image(getBase64Image(rs.getBlob(2)));
 				listKyc.add(km);
 			}while(rs.next());
@@ -58,6 +59,8 @@ public class UploadKycService {
 		return listKyc;
 		
 	}
+	
+	
 	
 	 // Method to get blob image from database.
     private String getBase64Image(Blob blob) throws SQLException, IOException {

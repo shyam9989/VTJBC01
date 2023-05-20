@@ -1,7 +1,8 @@
+<%@page import="com.model.RegisterModel"%>
 <%@page import="java.util.List"%>
 <%@page import="com.service.UploadKycService"%>
 <%@page import="com.model.KycModel"%>
-<%@page import="com.model.RegisterModel"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -76,6 +77,7 @@
   </header><!-- End Header -->
 
   <main id="main">
+  
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -96,7 +98,6 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
 <%
-
 RegisterModel rm=(RegisterModel)session.getAttribute("account");
 UploadKycService uks=new UploadKycService();
 List<KycModel> kycs = uks.getKyc(rm.getUserid());
@@ -104,7 +105,6 @@ for(KycModel kyc:kycs){
 	System.out.println("inside jsp"+kyc.getName());
 	System.out.println(kyc.getFatherName());
 }
-
 %>
 <p>Welcome :<%=rm.getName() %></p>
     <!--     <div class="row" data-aos="fade-up">
@@ -128,9 +128,11 @@ for(KycModel kyc:kycs){%>
              <img src="data:image/jpg;base64,<%=kyc.getBase64Image()%>" alt="image" class="img-fluid"/>
             
             <div class="portfolio-info">
-              <h4><%=kyc.getName() %></h4>
-              <p><%=kyc.getFatherName() %></p>
-              <a href="data:image/jpg;base64,<%=kyc.getBase64Image()%>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <h4>UserName: <%=kyc.getName() %></h4>
+              <p>FatherName: <%=kyc.getFatherName() %></p>
+               <p>Mobile: <%=kyc.getMobile()%></p>
+                <p>Address: <%=kyc.getAddress()%></p>
+              <a href="data:image/jpg;base64,<%=kyc.getBase64Image()%>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"></i></a>
             <!--   <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
             </div>
           </div>

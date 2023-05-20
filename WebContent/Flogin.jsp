@@ -133,13 +133,13 @@
                    <div class="text-center"><a href=""></a></div>
                 </div>
                  <div class="col-md-6 form-group">
-                   <div class="text-center"><a href="register.jsp">Register</a></div>
+                   <div class="text-center"><a href="Fregister.jsp">Register</a></div>
                 </div><br/>
                 
               </div>
              
               <div class="my-3">
-              
+              <input type="hidden" value="finance" name="fin"/>
              
               </div>
               
